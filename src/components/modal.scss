@@ -1,0 +1,18 @@
+.inputs{
+    .lattitude-input{
+        display: flex;
+        justify-content: center;
+        .input-text{
+            width: 33%;
+            padding: 1rem 0 0.5rem 0;
+        }
+        .input-box{
+            width: 21%;
+            input{
+                margin: 0 0 1rem 0;
+                padding: 1rem 0 0.5rem 0;
+            }
+        }
+    }
+}
+

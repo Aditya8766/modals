@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Modal from "./components/Modal";
+import "./App.css";
+import ModalFooter from "./components/ModalFooter";
+import ModalTitle from "./components/ModalTitle";
+import List from "./components/List";
+import { IntlProvider } from "react-intl";
+import { LOCALES } from "./i18n/locales";
+import { messages } from "./i18n/messages";
+import Content from "./components/Content";
 function App() {
+  console.log(IntlProvider);
+  const locale = LOCALES.SPANISH;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <IntlProvider
+      messages={messages[locale]}
+      locale={locale}
+      defaultLocale={LOCALES.ENGLISH}
+    >
+        <Content/>
+      <div className="app">
+        <ModalTitle
+          TitleText="CONFIGURE INSTALLATION PARAMETERS"
+          EndText="RN1234567"
+        />
+        <Modal />
+        {/* <List/> */}
+        {/* <ModalFooter/> */}
+      </div>
+    </IntlProvider>
   );
 }
 
