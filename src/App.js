@@ -7,9 +7,19 @@ import { IntlProvider } from "react-intl";
 import { LOCALES } from "./i18n/locales";
 import { messages } from "./i18n/messages";
 import Content from "./components/Content";
+import { useState } from "react";
 function App() {
-  console.log(IntlProvider);
-  const locale = LOCALES.SPANISH;
+  const [locale,SetLocale]=useState("en");
+  const handelLanguageSelectChange=()=>{
+    if(locale==="en"){
+      SetLocale("ja");
+    }
+    else{
+      SetLocale("en")
+    }
+  }
+  // console.log(IntlProvider);
+  // const locale = LOCALES.SPANISH;
   return (
     <IntlProvider
       messages={messages[locale]}
@@ -17,6 +27,11 @@ function App() {
       defaultLocale={LOCALES.ENGLISH}
     >
         <Content/>
+        <select locale={locale} onChange={handelLanguageSelectChange}>
+          <option>--SELECT LANGUAGE--</option>
+          <option locale="en">ENGLISH</option>
+          <option locale="ja">JAPANESE</option>
+        </select>
       <div className="app">
         <ModalTitle
           TitleText="CONFIGURE INSTALLATION PARAMETERS"
