@@ -1,8 +1,6 @@
 import Modal from "./components/Modal";
 import "./App.css";
-import ModalFooter from "./components/ModalFooter";
 import ModalTitle from "./components/ModalTitle";
-import List from "./components/List";
 import { IntlProvider } from "react-intl";
 import { LOCALES } from "./i18n/locales";
 import { messages } from "./i18n/messages";

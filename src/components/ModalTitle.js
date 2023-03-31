@@ -8,7 +8,7 @@ function ModalTitle(props) {
       </div>
       <div className="end-text">
         <span className="span-end-text">{EndText}</span>
-      </div>
+      </div>  
     </div>
   );
 }
